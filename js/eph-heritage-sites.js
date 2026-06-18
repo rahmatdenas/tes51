@@ -303,7 +303,28 @@ function renderDynamicDataInPanel(qid) {
       return a.sortYear - b.sortYear;
     });
 
- cord.events.forEach(ev => {
+let tautanSuntingEvent = `<a href="${wikiBaseUrl}#P793" target="_blank" class="sunting-link" title="Sunting peristiwa di Wikidata">${IKON_SUNTING}</a>`;
+
+    record.events.forEach(ev => {
+      let capLabel = ev.label.charAt(0).toUpperCase() + ev.label.slice(1);
+      let timeText = ev.time ? ev.time : ''; 
+      html += `<p>${capLabel}: ${timeText}${tautanSuntingEvent}</p>`;
+    });
+  }
+
+  // --- URUTAN 2: STATUS (KONDISI - P5817) ---
+  if (record.kondisi) {
+    let kondisiKecil = record.kondisi.toLowerCase();
+    let tautanSuntingKondisi = `<a href="${wikiBaseUrl}#P5817" target="_blank" class="sunting-link" title="Sunting kondisi di Wikidata">${IKON_SUNTING}</a>`;
+    html += `<p>Kondisi: ${kondisiKecil}${tautanSuntingKondisi}</p>`;
+  }
+
+  // --- URUTAN 3: KAPASITAS JEMAAH (P1083) ---
+  if (record.kapasitas) {
+    let formatAngka = parseInt(record.kapasitas).toLocaleString('id-ID');
+    let tautanSuntingKapasitas = `<a href="${wikiBaseUrl}#P1083" target="_blank" class="sunting-link" title="Sunting kapasitas di Wikidata">${IKON_SUNTING}</a>`;
+    html += `<p>Kapasitas: ${formatAngka} jemaah${tautanSuntingKapasitas}</p>`;
+  }
 
   // --- URUTAN 4: TAUTAN TAMBAHKAN DATA LAINNYA (Tampil Default) ---
   let tautanTambah = `<p><a href="${wikiBaseUrl}" target="_blank" class="sunting-linktambah" title="Tambahkan data di Wikidata">Tambahkan data lainnya</a></p>`;
