@@ -580,10 +580,18 @@ function applyIntersectionFilter(preventZoom = false) {
     }
 
     // Cek pencarian teks dengan keamanan ekstra
-    let matchSearch = true;
+let matchSearch = true;
     if (currentSearchQuery.trim() !== '') {
+      
+      // 1. Buang semua spasi (\s) dan strip (-) dari kata kunci pencarian
+      let cleanQuery = currentSearchQuery.replace(/[-\s]/g, '');
+      
       if (record.indexTitle) {
-        matchSearch = record.indexTitle.toLowerCase().includes(currentSearchQuery);
+        // 2. Buang juga semua spasi dan strip dari nama masjid di database
+        let cleanTitle = record.indexTitle.toLowerCase().replace(/[-\s]/g, '');
+        
+        // 3. Cocokkan keduanya dalam versi yang sudah "bersih"
+        matchSearch = cleanTitle.includes(cleanQuery);
       } else {
         matchSearch = false;
       }
