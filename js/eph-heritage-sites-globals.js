@@ -123,3 +123,40 @@ function getSparqlQuery6(qid) {
 }
 
 const ABOUT_SPARQL_QUERY = ``;
+
+const SPARQL_QUERY_0_PERS =
+`SELECT DISTINCT ?siteQid ?siteLabel ?provinsiQid ?provinsiLabel ?p131LokasiLabel ?tahunBerdiriMentah ?tahunPresisi
+WHERE {
+  { SELECT ?provinsi WHERE { ?provinsi wdt:P31 wd:Q5098 . } }
+  
+  VALUES ?jenis { <PLACEHOLDER_JENIS> }
+  
+  ?site wdt:P31 ?jenis ;
+        wdt:P159 ?kantor .
+  ?kantor wdt:P131+ ?provinsi .
+  
+  OPTIONAL { ?kantor wdt:P131 ?p131Lokasi . }
+      
+  OPTIONAL { 
+    ?site p:P571 ?inceptionStmt .
+    ?inceptionStmt psv:P571 ?inceptionNode .
+    ?inceptionNode wikibase:timeValue ?tahunBerdiriMentah ;
+                   wikibase:timePrecision ?tahunPresisi .
+  }
+  
+  BIND(SUBSTR(STR(?site), 32) AS ?siteQid) .
+  BIND(SUBSTR(STR(?provinsi), 32) AS ?provinsiQid) .
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "id". }
+}`;
+
+const SPARQL_QUERY_1_PERS_TEMPLATE =
+`SELECT DISTINCT ?siteQid ?coord WHERE {
+  VALUES ?site { <PLACEHOLDER_QIDS> }
+
+  ?site wdt:P159 ?kantor .
+  ?kantor p:P625 ?coordStatement .
+  ?coordStatement ps:P625 ?coord .
+  FILTER NOT EXISTS { ?coordStatement pq:P518 ?x }
+  BIND (SUBSTR(STR(?site), 32) AS ?siteQid) .
+}`;
