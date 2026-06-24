@@ -29,7 +29,6 @@ WHERE {
 
 const SPARQL_QUERY_1_TEMPLATE =
 `SELECT DISTINCT ?siteQid ?coord WHERE {
-  // Masukkan daftar ID bangunan hasil cicilan di sini
   VALUES ?site { <PLACEHOLDER_QIDS> }
 
   ?site p:P625 ?coordStatement .
@@ -40,7 +39,6 @@ const SPARQL_QUERY_1_TEMPLATE =
 
 const SPARQL_QUERY_3_TEMPLATE =
 `SELECT ?siteQid (SAMPLE(?imgUtama) AS ?image) (SAMPLE(?wikiTitle) AS ?wikipediaUrlTitle) WHERE {
-  // Masukkan daftar ID bangunan hasil cicilan di sini
   VALUES ?site { <PLACEHOLDER_QIDS> }
   
   OPTIONAL {
