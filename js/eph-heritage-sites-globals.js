@@ -87,7 +87,7 @@ const KUMPULAN_KUERI_1 = {
     ?coordStatement ps:P625 ?coord .
     FILTER NOT EXISTS { ?coordStatement pq:P518 ?x }
     BIND (SUBSTR(STR(?site), 32) AS ?siteQid) .
-  } ,
+  }`,
   
    'pers': `SELECT DISTINCT ?siteQid ?coord WHERE {
     VALUES ?site { <PLACEHOLDER_QIDS> }
@@ -96,7 +96,7 @@ const KUMPULAN_KUERI_1 = {
     ?coordStatement ps:P625 ?coord .
     FILTER NOT EXISTS { ?coordStatement pq:P518 ?x }
     BIND (SUBSTR(STR(?site), 32) AS ?siteQid) .
-  },
+  }`,
   
   'wilayah': `SELECT DISTINCT ?siteQid ?coord WHERE {
     VALUES ?site { <PLACEHOLDER_QIDS> }
@@ -104,7 +104,7 @@ const KUMPULAN_KUERI_1 = {
     ?coordStatement ps:P625 ?coord .
     FILTER NOT EXISTS { ?coordStatement pq:P518 ?x }
     BIND (SUBSTR(STR(?site), 32) AS ?siteQid) .
-  }
+  }`
 };
 
 // ==========================================
