@@ -5,9 +5,9 @@ const COMMONS_WIKI_URL_PREF   = 'https://commons.wikimedia.org/wiki/';
 const COMMONS_API_URL         = 'https://commons.wikimedia.org/w/api.php';
 const YEAR_PRECISION          = '9';
 const OSM_LAYER_URL           = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-const OSM_LAYER_ATTRIBUTION   = 'Base map © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>';
+const OSM_LAYER_ATTRIBUTION   = 'Base map © <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap contributors</a>';
 const CARTO_LAYER_URL         = 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png';
-const CARTO_LAYER_ATTRIBUTION = 'Base map © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> (data), <a href="https://carto.com/">CARTO</a> (style)';
+const CARTO_LAYER_ATTRIBUTION = 'Base map © <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap contributors</a> (data), <a href="https://carto.com/" target="_blank">CARTO</a> (style)';
 const TILE_LAYER_MAX_ZOOM     = 16;
 
 const MIN_PH_LAT              =   6.0;   
@@ -194,7 +194,7 @@ L.control.locate({
   let powered = L.control({ position: 'bottomleft' });
   powered.onAdd = function(Map) {
     var divElem = L.DomUtil.create('div', 'powered');
-    divElem.innerHTML = '<a href="https://www.wikidata.org/"><img src="img/powered_by_wikidata.png"></a>';
+    divElem.innerHTML = '<a><img src="img/powered_by_wikidata.png"></a>';
     return divElem;
   };
   powered.addTo(Map);
