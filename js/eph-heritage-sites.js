@@ -867,11 +867,7 @@ let isBersejarah = false;
 
   // Daftar bangunan/struktur fisik yang masuk akal diberi label "Bersejarah"
   let klasterBisaBersejarah = [
-    'Masjid', 'Bangunan bersejarah', 'Gereja & katedral', 'Vihara & kelenteng',
-    'Rumah sakit', 'Universitas & kampus', 'Perpustakaan', 'Museum', 'Istana',
-    'Stasiun kereta api', 'Pelabuhan', 'Kuil & candi', 'Benteng dan bunker',
-    'Pasar dan mall', 'Hotel dan resor', 'Monumen, patung, & memorial', 
-    'Situs arkeologi'
+    'Masjid', 'Bangunan bersejarah', 'Gereja & katedral'
   ]; 
   
   let teksJudul = `Informasi ${currentNamaKlaster}`;
