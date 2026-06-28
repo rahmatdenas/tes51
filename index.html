@@ -38,12 +38,15 @@
 </select>
     <label for="jenis-dropdown" style="font-weight: bold;">Pilih Kategori Bangunan:</label>
     
-    <select id="jenis-dropdown" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">      
+    <select id="jenis-dropdown" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+      <optgroup label="Lokasi & Tempat">
       <option value="wd:Q3199141 wd:Q3191695">Kabupaten & kota</option>
       <option value="wd:Q5">Tempat lahir tokoh</option>
       <option value="wd:Q7725634">Latar karya sastra</option>
       <option value="wd:Q47461344 wd:Q7725634">Publikasi</option>
       <option value="wd:Q34770">Bahasa</option>
+        </optgroup>
+      <optgroup label="AAAA">
       <option value="wd:Q19861951 wd:Q746549 wd:Q2095 wd:Q8195619">Hidangan</option>
       <option value="wd:Q3305213">Lukisan</option>
       <option value="wd:Q1641020">Lontar</option>
@@ -88,6 +91,7 @@
       <option value="wd:Q570116">Objek wisata</option>
       <option value="wd:Q16560 wd:Q481289">Istana</option>
       <option value="wd:Q131681 wd:Q12323">Waduk, bendungan, & embung</option>
+        </optgroup>
       <option value="custom">Ketik Q-ID Sendiri...</option>
     </select>
     <label for="jenis-input" style="font-weight: bold; margin-top: 10px;">Parameter SPARQL (Q-ID):</label>
