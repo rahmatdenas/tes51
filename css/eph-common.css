@@ -121,7 +121,7 @@ nav li.active a, nav li a.active {
   justify-content: center;
   align-items: center;
   flex: 1;
-  background: red;
+  background: #FFF;
 }
 
 .panel-content {
@@ -388,7 +388,7 @@ optgroup option { padding-left: 10px; }
 }
 
 #details .main-text { padding: 0 170px 0 0; }
-#details .main-text .loader { margin: 40px auto 0; }
+#details .main-text .loader { margin: 40px auto 40px; }
 #details .main-text p:first-child { margin-top: -5px; }
 
 .arsip-block p { padding-bottom: 15px !important; }
