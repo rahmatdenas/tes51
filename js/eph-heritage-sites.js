@@ -673,7 +673,7 @@ if (urlWikibooks) {
     if (arsipContainer) {
       let wikibooksHtml = `
         <div style="margin-top:10px;">
-          <h2>Resep & Panduan</h2>
+          <h2 style="margin-bottom: 7px;">Resep & Panduan</h2>
           <p class="wikipedia-link">
             <a href="${urlWikibooks}" target="_blank">
               <img src="img/wikibook_tiny_logo.png" alt="" />
@@ -1235,7 +1235,7 @@ function renderHistoricalImagesInPanel(qid) {
   }
 
   if (record.commonsCat) {
-    html += '<h2 style="margin-top:10px;">Galeri lainnya</h2>';
+    html += '<h2 style="margin-top:10px; margin-bottom: 7px;">Galeri lainnya</h2>';
     html += 
       '<p class="wikipedia-link" style="margin-bottom: 0;">' +
         `<a href="https://commons.wikimedia.org/wiki/Category:${encodeURIComponent(record.commonsCat)}" target="_blank">` +
